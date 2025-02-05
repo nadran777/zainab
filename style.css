@@ -5,330 +5,663 @@
   box-sizing: border-box;
 }
 
-/* Navigation */
-
-header {
-  background-color: #f8f1f1;
-  position: fixed;
-  top: 0px;
-  z-index: 999;
-  width: 100%;
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-  padding: 1px 12px !important;
-  transition: all 0.5s;
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-.navbar img {
-  margin-right: 700px;
-  width: 100px;
-  height: 70px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
-.navbar-nav .nav-link {
-  margin: 0 6px;
-  color: black !important;
-  font-size: 18px;
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* !Navbar */
+.navbar {
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+  transition: all 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: #2d3436 !important;
   font-weight: 500;
-  transition: color 0.3s ease-in-out;
+  padding: 0.5rem 1.2rem !important;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.navbar-nav .nav-link:hover {
-  color: red !important;
+.nav-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #fd0d0d;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
-/* home */
-.home {
-  background-image: url("./ASSET/background\ image.jpg");
-  width: 100%;
+
+.nav-link:hover:after {
+  width: 70%;
+}
+
+.nav-link:hover {
+  color: #fd0d0d !important;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+@media (max-width: 576px) {
+  .navbar-nav {
+    padding: 1rem 0;
+  }
+
+  .nav-link {
+    padding: 0.7rem 0 !important;
+    text-align: center;
+  }
+
+  .nav-link:after {
+    display: none;
+  }
+}
+
+/* Add scroll behavior */
+.navbar-scrolled {
+  padding: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled .navbar-brand img {
+  transform: scale(0.9);
+}
+/* Home Section */
+.home-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./ASSET/background\ image.jpg") no-repeat center center/cover;
   height: 100vh;
-  position: relative;
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
-}
-.home h1{
-  font-size: 45px;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
-}
-.home p{
-  font-size: 20px;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
-}
-.first-row {
-  color: red;
-}
-
-
-/* /home */
-
-/* Sections */
-
-section h2 {
-  color: black;
-  font-size: 32px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-section h2:hover {
-  color: #ec2a2a;
-}
-/* /sections */
-
-/* vision */
-
-.vision h2 {
+  justify-content: center;
   text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+.home-section h1 {
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.home-section p {
+  font-size: 24px;
+  margin-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  color: #f8f9fa;
+}
+
+.home-section .btn {
   margin-top: 20px;
 }
-.vision span {
-  font-size: 15px;
+
+/* Vision & Mission Sections Common Styles */
+.vision-section,
+.mission-section,
+.services-section,
+.career-section {
+  padding: 80px 0;
+}
+
+.vision-section h2,
+.mission-section h2,
+.services-section h2,
+.career-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.vision-section h2::after,
+.mission-section h2::after,
+.services-section h2::after,
+.career-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #fd0d0d;
+}
+
+/* Vision & Mission Lists */
+.vision-text,
+.mission-text {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vision-text li,
+.mission-text li {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+.vision-text li:before,
+.mission-text li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #fd0d0d;
   font-weight: bold;
 }
-.imageColumn-vision img {
-  width: 480px;
-  height: 50vh;
-}
 
-/* /vision */
-
-/* mission */
-.mission span {
-  font-size: 15px;
-  font-weight: bold;
-}
-.mission-image img {
-  width: 480px;
-  height: 50vh;
-}
-.mission .list-item {
-  margin: 0px 100px;
-  color: #080808;
-}
-/* /mission */
-
-/* service */
-.services p{
-  font-size: 15px;
-  font-weight: bold;
-}
-.services .card {
-  border: none;
-}
-.services .box {
-  background: #fff;
-  box-shadow: 12px 12px 12px 0px rgb(201, 182, 182);
-  width: 260px;
-  height: 300px;
-  border-radius: 12px 12px;
-  margin: 10px;
-}
-.services .box:hover {
-  box-shadow: 12px 12px 12px 10px rgb(201, 182, 182);
-}
-.services img {
-  padding: 10px 0px;
-  border-radius: 20px;
-}
-.services .card-body {
-  padding: 20px 0px;
-}
-/* /service */
-
-/* clients */
-.Clients {
-  padding: 60px 0px !important;
-}
-.owl-one .owl-stage {
-  display: flex;
-  align-items: center;
-}
-.client-image img {
-  width: 120px !important;
-}
-.slide {
-  padding: 0;
-  filter: grayscale(100);
-  opacity: 0.5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.slide:hover {
-  filter: none;
-  opacity: 1;
-  transition: 0.5s;
-}
-.owl-dots .active span {
-  background-color: #e03a3c !important;
-}
-/* /clients */
-
-/* contact us */
-#contact a {
-  text-decoration: none;
-  color: #080808;
-}
-.contact a{
-  font-size: 15px;
-  font-weight: bold;
-}
-.contact p{
-  font-size: 15px;
-  font-weight: bold;
-}
-/* /contact us */
-
-/* Footer */
-footer {
+/* Services Section Enhancement */
+.service-card {
+  padding: 2rem;
   text-align: center;
-  padding: 20px;
-  background-color: #6c0000;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #fd0d0d;
+  margin-bottom: 1.5rem;
+}
+
+.service-card h4 {
+  color: #2d3436;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Client Section */
+.clients-section {
+  background-color: #f8f9fa;
+  padding-top: 50px;
+}
+
+.clients-section .carousel-inner {
+  padding: 0px 0;
+}
+
+.clients-section .carousel-item img {
+  transition: transform 0.3s ease;
+}
+
+.clients-section .carousel-item img:hover {
+  transform: scale(1.4);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #0d6efd;
+  border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+/* Career Section Enhancements */
+.career-section .job-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-card .apply-buttons {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+/* Make all job cards the same height */
+.career-section .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.career-section .col-lg-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Update button colors to be more solid */
+.btn-danger {
+  background-color: #b20000;
+  border-color: #b20000;
+}
+
+.btn-danger:hover {
+  background-color: #b20000;
+  border-color: #b20000;
+}
+
+.btn-success {
+  background-color: #075e54;
+  border-color: #075e54;
+}
+
+.btn-success:hover {
+  background-color: #075e54;
+  border-color: #075e54;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .vision-section h2,
+  .mission-section h2,
+  .services-section h2,
+  .career-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .vision-text li,
+  .mission-text li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 0;
+}
+
+.contact-info p {
   font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Fixed Contact Icons */
+.fixed-contact-icons {
+  position: fixed;
+  right: 20px;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-icon.whatsapp {
+  background-color: #075e54;
+}
+
+.contact-icon.phone {
+  background-color: #b20000;
+}
+
+.contact-icon i {
+  font-size: 24px;
+}
+
+/* Tooltip Styles */
+.tooltip {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
+}
+
+.contact-icon:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Phone Numbers Tooltip */
+.phone-numbers {
+  min-width: 200px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phone-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.phone-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
-/* Chatbox Whatsapp */
-:root {
-  --warna-background: #1daa61;
-  --warna-bg-chat: #f0f5fb;
-  --warna-icon: #fff;
-  --warna-text: #505050;
-  --warna-text-alt: #989b9f;
-  --lebar-chatbox: 320px;
+.phone-link img {
+  border-radius: 2px;
 }
 
-svg {
-  width: 40px;
-  height: 40px;
-  vertical-align: middle;
-  fill: var(--warna-icon);
-}
-.chatMenu,
-.chatButton .svg-2 {
-  display: none;
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .fixed-contact-icons {
+    right: 15px;
+    bottom: 15px;
+    gap: 10px;
+  }
+
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .contact-icon i {
+    font-size: 20px;
+  }
+
+  .tooltip {
+    right: 55px;
+    font-size: 12px;
+  }
+
+  .phone-numbers {
+    min-width: 180px;
+  }
+
+  .phone-link {
+    font-size: 12px;
+  }
 }
 
-.chatButton {
-  position: fixed;
-  background-color: var(--warna-background);
-  bottom: 20px;
-  left: 20px;
-  border-radius: 50px;
-  z-index: 20;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-.chatButton svg {
-  margin: auto;
-  fill: var(--warna-icon);
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.chatBox {
-  position: fixed;
-  bottom: 70px;
-  left: 20px;
-  width: var(--lebar-chatbox);
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  z-index: 21;
-  opacity: 0;
-  visibility: hidden;
-  line-height: normal;
+.footer p {
+  margin: 0;
 }
-.chatContent {
-  border-radius: 15px;
-  background-color: #fff;
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  border: 1px solid #b6b6b6;
+
+/* Contact button improvements */
+.apply-buttons a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.chatHeader {
+
+.apply-buttons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  cursor: pointer;
+}
+
+.contact-icon:active {
+  transform: scale(0.95);
+}
+
+.fixed-contact-icons {
+  z-index: 1000;
+}
+
+/* Career Application Buttons */
+.apply-buttons {
+  margin-top: auto;
+}
+
+.apply-buttons a {
+  transition: all 0.3s ease;
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: var(--warna-background);
   overflow: hidden;
 }
-.chatHeader svg {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  fill: var(--warna-icon);
-}
-.chatHeader .chatTitle {
-  padding-left: 15px;
-  font-size: 14px;
-  color: var(--warna-icon);
-}
-.chatHeader .chatTitle span {
-  font-size: 11.5px;
-  display: block;
-  line-height: 1.58em;
+
+.apply-buttons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.chatText {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 25px 20px;
-  font-size: 12px;
-  color: var(--warna-text);
-}
-.chatText span {
-  display: inline-block;
-  margin-right: auto;
-  padding: 10px 10px 10px 20px;
-  background-color: var(--warna-bg-chat);
-  border-radius: 3px 15px 15px;
-}
-.chatText span:after {
-  content: "Just now";
-  margin-left: 15px;
-  font-size: 9px;
-  color: var(--warna-text-alt);
-}
-.chatText .typing {
-  margin: 15px 0 0 auto;
-  padding: 10px 20px 10px 10px;
-  border-radius: 15px 3px 15px 15px;
-}
-.chatText .typing after {
-  display: none;
+.apply-buttons a:active {
+  transform: translateY(0);
 }
 
-.chatStart {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-  padding: 18px 20px;
-  border-radius: 10px;
-  background-color: #fff;
+.apply-buttons .btn-danger {
+  background-color: #b20000;
+  border-color: #b20000;
+}
+
+.apply-buttons .btn-danger:hover {
+  background-color: #b20000;
+  border-color: #b20000;
+}
+
+.apply-buttons .btn-success {
+  background-color: #075e54;
+  border-color: #075e54;
+}
+
+.apply-buttons .btn-success:hover {
+  background-color: #075e54;
+  border-color: #075e54;
+}
+
+/* Mobile responsiveness for buttons */
+@media (max-width: 576px) {
+  .apply-buttons a {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Email Modal Styles */
+.modal-dialog {
+  max-width: 500px;
+  margin: 1.75rem auto;
+}
+
+.modal-content {
+  border-radius: 15px;
   overflow: hidden;
-  font-size: 12px;
-  color: var(--warna-text);
-  border: 1px solid grey;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-.chatMenu:checked + .chatButton {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+
+.modal-header {
+  background-color: #b20000;
+  padding: 0.8rem 1.2rem;
+  border-bottom: none;
 }
-.chatMenu:checked + .chatButton .svg-1 {
-  display: none;
+
+.modal-title {
+  font-size: 1.1rem;
+  font-weight: 600;
 }
-.chatMenu:checked + .chatButton .svg-2 {
-  display: block;
+
+.modal-body {
+  padding: 1.2rem;
+  max-height: 70vh;
+  overflow-y: auto;
 }
-.chatMenu:checked ~ .chatBox {
-  bottom: 90px;
-  opacity: 1;
-  visibility: visible;
+
+/* Form Styles */
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #4b5563;
+}
+
+.form-control,
+.form-select {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #b20000;
+  box-shadow: 0 0 0 0.2rem rgba(253, 13, 13, 0.15);
+}
+
+.form-control[readonly] {
+  background-color: #f9fafb;
+  cursor: default;
+}
+
+textarea.form-control {
+  min-height: 60px;
+  max-height: 120px;
+}
+
+/* Button Styles */
+.modal-footer {
+  padding: 0.8rem 1.2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-danger {
+  background-color: #b20000;
+  border-color: #b20000;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-danger:hover {
+  background-color: #b20000;
+  border-color: #b20000;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  border-color: #6b7280;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+    max-height: 80vh;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 0.85rem;
+  }
 }
