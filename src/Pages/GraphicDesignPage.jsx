@@ -20,6 +20,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import graphicImg from "../assets/images/graphicdesign.webp";
 import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function GraphicDesignPage() {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ function GraphicDesignPage() {
   useEffect(() => {
     // Initialize AOS animations
     AOS.init();
-    
+
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
@@ -184,42 +185,161 @@ function GraphicDesignPage() {
       </div>
 
       {/* Services Section */}
+      {/* Design Services Section */}
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-5xl mx-auto" data-aos="fade-up">
-          <div className="bg-white shadow-xl rounded-2xl p-8 sm:p-12">
-            <h2 className="text-3xl font-bold mb-12 text-red-700 text-center">Our Design Services</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-red-50 to-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-3 mb-6">
-                  <Globe className="w-8 h-8 text-red-700" />
-                  <h3 className="text-2xl font-semibold text-red-700">Brand Design</h3>
+        <motion.div
+          className="max-w-5xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.div className="bg-white shadow-xl rounded-2xl p-8 sm:p-12 overflow-hidden">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-red-700">Our Design Services</h2>
+              <motion.div
+                className="h-1 w-20 bg-red-700 mx-auto mt-4"
+                initial={{ width: 0 }}
+                whileInView={{ width: 80 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                viewport={{ once: true }}
+              />
+              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+                We create stunning visuals that capture your brand's essence and captivate your audience
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="grid md:grid-cols-2 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.2,
+                  },
+                },
+              }}
+            >
+              <motion.div
+                className="bg-gradient-to-br from-red-50 to-white rounded-xl p-8 border border-red-100 hover:border-red-200 transition-all duration-300"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5 },
+                  },
+                }}
+                whileHover={{
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  y: -5,
+                }}
+              >
+                <div className="flex items-center gap-4 mb-6 border-b border-red-100 pb-4">
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: [0, 5, -5, 0],
+                    }}
+                    transition={{ duration: 0.5 }}
+                    className="p-3 bg-red-50 rounded-lg"
+                  >
+                    <Globe className="w-8 h-8 text-red-700" />
+                  </motion.div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-800">Brand Design</h3>
+                    <p className="text-red-600 text-sm font-medium">Visual Identity Excellence</p>
+                  </div>
                 </div>
                 <ul className="space-y-4">
-                  {["Logo Design", "Brand Guidelines", "Visual Identity", "Marketing Materials"].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-red-700" />
-                      {item}
-                    </li>
+                  {["Logo Design", "Brand Guidelines", "Visual Identity", "Marketing Materials"].map((item, i) => (
+                    <motion.li
+                      key={item}
+                      className="flex items-center gap-3 text-gray-700"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 * i, duration: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.2 }}
+                        className="bg-red-100 p-1 rounded-full flex items-center justify-center"
+                      >
+                        <CheckCircle className="w-4 h-4 text-red-700" />
+                      </motion.div>
+                      <span className="font-medium">{item}</span>
+                    </motion.li>
                   ))}
                 </ul>
-              </div>
-              <div className="bg-gradient-to-br from-red-50 to-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-3 mb-6">
-                  <Send className="w-8 h-8 text-red-700" />
-                  <h3 className="text-2xl font-semibold text-red-700">Digital Design</h3>
+              </motion.div>
+
+              <motion.div
+                className="bg-gradient-to-br from-red-50 to-white rounded-xl p-8 border border-red-100 hover:border-red-200 transition-all duration-300"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5 },
+                  },
+                }}
+                whileHover={{
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  y: -5,
+                }}
+              >
+                <div className="flex items-center gap-4 mb-6 border-b border-red-100 pb-4">
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: [0, 5, -5, 0],
+                    }}
+                    transition={{ duration: 0.5 }}
+                    className="p-3 bg-red-50 rounded-lg"
+                  >
+                    <Send className="w-8 h-8 text-red-700" />
+                  </motion.div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-800">Digital Design</h3>
+                    <p className="text-red-600 text-sm font-medium">Engaging Visual Content</p>
+                  </div>
                 </div>
                 <ul className="space-y-4">
-                  {["Social Media Graphics", "Web Graphics", "Digital Advertising", "UI Design"].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-red-700" />
-                      {item}
-                    </li>
+                  {["Social Media Graphics", "Web Graphics", "Digital Advertising", "UI Design"].map((item, i) => (
+                    <motion.li
+                      key={item}
+                      className="flex items-center gap-3 text-gray-700"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 * i, duration: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.2 }}
+                        className="bg-red-100 p-1 rounded-full flex items-center justify-center"
+                      >
+                        <CheckCircle className="w-4 h-4 text-red-700" />
+                      </motion.div>
+                      <span className="font-medium">{item}</span>
+                    </motion.li>
                   ))}
                 </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Pricing Section */}
