@@ -70,28 +70,28 @@ const Mission = () => {
           <div className="order-1 lg:order-1 space-y-8" ref={textSectionRef}>
             {/* Mission Header */}
             <div className="mb-12" data-aos="fade-up">
-              <motion.h2
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-10"
+            <motion.h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center lg:text-left mb-10"
+            initial="hidden"
+            animate="visible"
+            variants={titleVariants}
+          >
+            <span className="relative inline-block">
+              Our
+              <motion.div
+                className="absolute h-0.5 bg-red-600"
+                style={{
+                  top: "calc(100% + 0.5rem)",
+                  left: 0,
+                  right: 0,
+                }}
                 initial="hidden"
                 animate="visible"
-                variants={titleVariants}
-              >
-                <span className="relative inline-block">
-                  Our
-                  <motion.div
-                    className="absolute h-0.5 bg-red-600"
-                    style={{
-                      top: "calc(100% + 0.5rem)",
-                      left: 0,
-                      right: 0,
-                    }}
-                    initial="hidden"
-                    animate="visible"
-                    variants={underlineVariants}
-                  ></motion.div>
-                </span>
-                {" Mission"}
-              </motion.h2>
+                variants={underlineVariants}
+              ></motion.div>
+            </span>
+            {" Mission"}
+          </motion.h2>
               <p className="text-gray-600 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
                 Empowering businesses with innovative, tailored, results-driven solutions.
               </p>

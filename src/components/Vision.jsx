@@ -78,7 +78,7 @@ const Vision = () => {
           <div className="order-1 space-y-8" ref={textSectionRef}>
             <div className="mb-12" data-aos="fade-up">
               <motion.h2
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-10"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center lg:text-left mb-10"
                 initial="hidden"
                 animate="visible"
                 variants={titleVariants}
