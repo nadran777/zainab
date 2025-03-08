@@ -125,7 +125,12 @@ function HomePage() {
                 <span className="relative inline-block">
                   Get
                   <motion.div
-                    className="absolute top-16 left-0 w-full h-0.5 bg-red-600"
+                    className="absolute h-0.5 bg-red-600"
+                    style={{
+                      top: "calc(100% + 0.5rem)",
+                      left: 0,
+                      right: 0,
+                    }}
                     initial="hidden"
                     animate="visible"
                     variants={underlineVariants}
@@ -157,8 +162,6 @@ function HomePage() {
                     unique goals. From search engine optimization (SEO) to social media marketing, we provide a full suite of
                     services that ensure your business stands out online.
                   </p>
-                
-                  
                 </div>
               </div>
 

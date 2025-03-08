@@ -78,19 +78,28 @@ const Vision = () => {
           <div className="order-1 space-y-8" ref={textSectionRef}>
             <div className="mb-12" data-aos="fade-up">
               <motion.h2
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-center lg:text-left text-black"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-10"
                 initial="hidden"
                 animate="visible"
                 variants={titleVariants}
               >
-                Our Vision
+                <span className="relative inline-block">
+                  Our
+                  <motion.div
+                    className="absolute h-0.5 bg-red-600"
+                    style={{
+                      top: "calc(100% + 0.5rem)",
+                      left: 0,
+                      right: 0,
+                    }}
+                    initial="hidden"
+                    animate="visible"
+                    variants={underlineVariants}
+                  ></motion.div>
+                </span>
+                {" Vision"}
               </motion.h2>
-              <motion.div
-                className="w-16 h-0.5 bg-red-600 mt-3 mb-4 mx-auto lg:mx-0"
-                initial="hidden"
-                animate="visible"
-                variants={underlineVariants}
-              ></motion.div>
+
               <p className="text-gray-600 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
                 Leading the digital revolution through boundless creativity and innovative excellence
               </p>

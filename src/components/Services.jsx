@@ -117,7 +117,12 @@ function Services() {
             <span className="relative inline-block">
               Our
               <motion.div
-                className="absolute top-16 left-0 w-full h-0.5 bg-red-600"
+                className="absolute h-0.5 bg-red-600"
+                style={{
+                  top: "calc(100% + 0.5rem)",
+                  left: 0,
+                  right: 0,
+                }}
                 initial="hidden"
                 animate="visible"
                 variants={underlineVariants}

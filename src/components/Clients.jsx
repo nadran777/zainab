@@ -105,23 +105,28 @@ const Clients = () => {
   return (
     <section className="py-16 mb-20 bg-gradient-to-b from-red-50 to-white">
       <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-10"
-          initial="hidden"
-          animate="visible"
-          variants={titleVariants}
-        >
-          <span className="relative inline-block">
-            Our
-            <motion.div
-              className="absolute top-16 left-0 w-full h-0.5 bg-red-600"
-              initial="hidden"
-              animate="visible"
-              variants={underlineVariants}
-            ></motion.div>
-          </span>
-          {" Trusted Clients"}
-        </motion.h2>
+      <motion.h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-10"
+            initial="hidden"
+            animate="visible"
+            variants={titleVariants}
+          >
+            <span className="relative inline-block">
+              Our
+              <motion.div
+                className="absolute h-0.5 bg-red-600"
+                style={{
+                  top: "calc(100% + 0.5rem)",
+                  left: 0,
+                  right: 0,
+                }}
+                initial="hidden"
+                animate="visible"
+                variants={underlineVariants}
+              ></motion.div>
+            </span>
+            {" Trusted Clients"}
+          </motion.h2>
         <div className="relative group" data-aos="fade-right">
           <div ref={sRef} className="overflow-hidden" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
             <div
