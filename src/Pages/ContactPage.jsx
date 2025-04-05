@@ -6,6 +6,7 @@ import indflag from "../assets/flag/in.svg";
 import uaeflag from "../assets/flag/ae.svg";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import { Helmet } from "react-helmet"; // Import Helmet for structured data
 
 function ContactPage() {
   const navigate = useNavigate();
@@ -54,11 +55,16 @@ function ContactPage() {
         setIsError(true);
       });
   };
+
   useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Add structured data in Helmet */}
+     
+
       <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-10 shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
@@ -229,27 +235,15 @@ function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full bg-red-700 hover:bg-red-800 text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg"
-                disabled={isLoading}
+                className="w-full bg-red-700 hover:bg-red-800 text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                {isLoading ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </>
-                )}
+                {isLoading ? "Sending..." : "Send Message"}
               </button>
 
               {isSuccess && (
-                <div className="bg-green-50 text-green-700 p-4 rounded-xl text-center">Message sent successfully!</div>
+                <p className="text-center text-green-600">Thank you for your message! We will get back to you shortly.</p>
               )}
-              {isError && (
-                <div className="bg-red-50 text-red-700 p-4 rounded-xl text-center">
-                  Failed to send the message. Please try again.
-                </div>
-              )}
+              {isError && <p className="text-center text-red-600">Something went wrong. Please try again.</p>}
             </form>
           </div>
         </div>

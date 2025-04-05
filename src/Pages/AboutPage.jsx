@@ -17,7 +17,7 @@ import {
   Medal,
   Sparkles,
 } from "lucide-react";
-import Team from "../components/Team";
+// import Team from "../components/Team";
 
 function AboutPage() {
   const navigate = useNavigate();
@@ -102,6 +102,10 @@ function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+
+      {/* Add structured data in Helmet */}
+      
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-10 shadow-sm">
         <div className="container mx-auto px-4">
