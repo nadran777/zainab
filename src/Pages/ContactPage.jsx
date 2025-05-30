@@ -135,8 +135,8 @@ function ContactPage() {
                     <Phone className="w-6 h-6 text-red-700" />
                   </div>
                   <div className="flex flex-col">
-                    <a href="tel:+970545163760" target="_blank" className="text text-decoration-none hover-primary">
-                      +970545163760 <img src={uaeflag} alt="UAE" className="inline-block w-5 h-5 ml-1" />
+                    <a href="tel:+9710545163760" target="_blank" className="text text-decoration-none hover-primary">
+                      +9710545163760 <img src={uaeflag} alt="UAE" className="inline-block w-5 h-5 ml-1" />
                     </a>
                   </div>
                 </div>

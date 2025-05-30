@@ -23,8 +23,8 @@ function HomePage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "UAE",
-      value: "+970545163760",
-      link: "tel:+970545163760",
+      value: "+9710545163760",
+      link: "tel:+9710545163760",
     },
     {
       icon: <Mail className="w-6 h-6" />,
