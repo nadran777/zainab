@@ -6,7 +6,7 @@ import indflag from "../assets/flag/in.svg";
 import uaeflag from "../assets/flag/ae.svg";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import { Helmet } from "react-helmet"; // Import Helmet for structured data
+// import { Helmet } from "react-helmet"; // Import Helmet for structured data
 
 function ContactPage() {
   const navigate = useNavigate();
@@ -135,8 +135,8 @@ function ContactPage() {
                     <Phone className="w-6 h-6 text-red-700" />
                   </div>
                   <div className="flex flex-col">
-                    <a href="tel:+971569569500" target="_blank" className="text text-decoration-none hover-primary">
-                      +971569569500 <img src={uaeflag} alt="UAE" className="inline-block w-5 h-5 ml-1" />
+                    <a href="tel:+970545163760" target="_blank" className="text text-decoration-none hover-primary">
+                      +970545163760 <img src={uaeflag} alt="UAE" className="inline-block w-5 h-5 ml-1" />
                     </a>
                   </div>
                 </div>

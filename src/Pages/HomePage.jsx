@@ -7,7 +7,7 @@ import Clients from "../components/Clients";
 import Header from "../components/Header";
 import Services from "../components/Services";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,8 +23,8 @@ function HomePage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "UAE",
-      value: "+971569569500",
-      link: "tel:+971569569500",
+      value: "+970545163760",
+      link: "tel:+970545163760",
     },
     {
       icon: <Mail className="w-6 h-6" />,

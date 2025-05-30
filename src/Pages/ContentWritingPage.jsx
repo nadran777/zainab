@@ -20,7 +20,7 @@ import AOS from "aos";
 import contentImg from "../assets/images/contentwriting.webp";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 function ContentWritingPage() {
   const navigate = useNavigate();
